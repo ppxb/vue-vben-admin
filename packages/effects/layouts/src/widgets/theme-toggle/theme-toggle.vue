@@ -51,6 +51,7 @@ const PRESETS = [
   },
 ];
 </script>
+
 <template>
   <div>
     <VbenTooltip :disabled="!shouldOnHover" side="bottom">

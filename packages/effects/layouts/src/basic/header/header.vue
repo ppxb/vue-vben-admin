@@ -48,7 +48,6 @@ const rightSlots = computed(() => {
       name: 'global-search',
     });
   }
-
   if (preferencesButtonPosition.value.header) {
     list.push({
       index: REFERENCE_VALUE + 10,
@@ -157,7 +156,6 @@ function clearPreferencesAndLogout() {
             class="mr-1 sm:mr-4"
           />
         </template>
-
         <template v-else-if="slot.name === 'preferences'">
           <PreferencesButton
             class="mr-1"
