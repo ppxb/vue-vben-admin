@@ -30,7 +30,8 @@ async function processItem(currentDir, item, targets, _depth) {
       // 匹配到目标目录或文件时直接删除
       await fs.rm(itemPath, { force: true, recursive: true });
       console.log(`✅ Deleted: ${itemPath}`);
-      return false; // 已删除，无需递归
+      // 已删除，无需递归
+      return false;
     }
 
     // 可能需要递归，由调用方决定
