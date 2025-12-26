@@ -2,7 +2,7 @@
 import { computed, useSlots } from 'vue';
 
 import { useRefresh } from '@vben/hooks';
-import { RotateCw } from '@vben/icons';
+import { IconifyIcon } from '@vben/icons';
 import { preferences, usePreferences } from '@vben/preferences';
 import { useAccessStore } from '@vben/stores';
 
@@ -127,7 +127,7 @@ function clearPreferencesAndLogout() {
     <slot :name="slot.name">
       <template v-if="slot.name === 'refresh'">
         <VbenIconButton class="my-0 mr-1 rounded-md" @click="refresh">
-          <RotateCw class="size-4" />
+          <IconifyIcon icon="lucide:refresh-cw" />
         </VbenIconButton>
       </template>
     </slot>
