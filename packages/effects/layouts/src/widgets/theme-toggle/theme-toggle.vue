@@ -56,11 +56,7 @@ const PRESETS = [
   <div>
     <VbenTooltip :disabled="!shouldOnHover" side="bottom">
       <template #trigger>
-        <ThemeButton
-          :model-value="isDark"
-          type="icon"
-          @update:model-value="handleChange"
-        />
+        <ThemeButton :model-value="isDark" @update:model-value="handleChange" />
       </template>
       <ToggleGroup
         :model-value="preferences.theme.mode"

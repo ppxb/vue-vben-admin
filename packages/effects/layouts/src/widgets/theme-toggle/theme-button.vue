@@ -5,19 +5,8 @@ import { IconifyIcon } from '@vben/icons';
 
 import { VbenButton } from '@vben-core/shadcn-ui';
 
-interface Props {
-  /**
-   * 类型
-   */
-  type?: 'icon' | 'normal';
-}
-
 defineOptions({
   name: 'ThemeToggleButton',
-});
-
-const props = withDefaults(defineProps<Props>(), {
-  type: 'normal',
 });
 
 const isDark = defineModel<boolean>();
@@ -26,20 +15,12 @@ const theme = computed(() => {
   return isDark.value ? 'light' : 'dark';
 });
 
-const bindProps = computed(() => {
-  const type = props.type;
-
-  return type === 'normal'
-    ? {
-        variant: 'heavy' as const,
-      }
-    : {
-        class: 'rounded-md',
-        size: 'icon' as const,
-        style: { padding: '7px' },
-        variant: 'icon' as const,
-      };
-});
+const bindProps = computed(() => ({
+  class: 'rounded-md',
+  size: 'icon' as const,
+  style: { padding: '6px' },
+  variant: 'icon' as const,
+}));
 
 function toggleTheme(event: MouseEvent) {
   const isAppearanceTransition =
