@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Settings } from '@vben/icons';
+import { IconifyIcon } from '@vben/icons';
 
 import { VbenIconButton } from '@vben-core/shadcn-ui';
 
@@ -13,8 +13,8 @@ function clearPreferencesAndLogout() {
 </script>
 <template>
   <Preferences @clear-preferences-and-logout="clearPreferencesAndLogout">
-    <VbenIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
-      <Settings class="text-foreground size-4" />
+    <VbenIconButton class="rounded-md">
+      <IconifyIcon icon="lucide:settings" />
     </VbenIconButton>
   </Preferences>
 </template>
