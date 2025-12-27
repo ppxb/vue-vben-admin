@@ -2,7 +2,7 @@
 import type { SupportedLanguagesType } from '@vben/locales';
 
 import { SUPPORT_LANGUAGES } from '@vben/constants';
-import { Languages } from '@vben/icons';
+import { IconifyIcon } from '@vben/icons';
 import { loadLocaleMessages } from '@vben/locales';
 import { preferences, updatePreferences } from '@vben/preferences';
 
@@ -13,7 +13,9 @@ defineOptions({
 });
 
 async function handleUpdate(value: string | undefined) {
-  if (!value) return;
+  if (!value) {
+    return;
+  }
   const locale = value as SupportedLanguagesType;
   updatePreferences({
     app: {
@@ -31,8 +33,8 @@ async function handleUpdate(value: string | undefined) {
       :model-value="preferences.app.locale"
       @update:model-value="handleUpdate"
     >
-      <VbenIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
-        <Languages class="text-foreground size-4" />
+      <VbenIconButton class="rounded-md">
+        <IconifyIcon icon="lucide:languages" />
       </VbenIconButton>
     </VbenDropdownRadioMenu>
   </div>

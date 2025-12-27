@@ -9,7 +9,7 @@ export interface LanguageOption {
 }
 
 /**
- * Supported languages
+ * 支持的语言
  */
 export const SUPPORT_LANGUAGES: LanguageOption[] = [
   {
