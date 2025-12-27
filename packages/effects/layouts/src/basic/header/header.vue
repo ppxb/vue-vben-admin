@@ -18,7 +18,7 @@ import {
 
 interface Props {
   /**
-   * Logo 主题
+   * 黑夜/白天主题
    */
   theme?: string;
 }
