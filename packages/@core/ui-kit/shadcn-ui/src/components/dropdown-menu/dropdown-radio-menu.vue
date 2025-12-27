@@ -11,7 +11,10 @@ import {
 
 interface Props extends DropdownMenuProps {}
 
-defineOptions({ name: 'DropdownRadioMenu' });
+defineOptions({
+  name: 'DropdownRadioMenu',
+});
+
 withDefaults(defineProps<Props>(), {});
 
 const modelValue = defineModel<string>();
@@ -20,6 +23,7 @@ function handleItemClick(value: string) {
   modelValue.value = value;
 }
 </script>
+
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child class="flex items-center gap-1">
@@ -27,7 +31,7 @@ function handleItemClick(value: string) {
     </DropdownMenuTrigger>
     <DropdownMenuContent align="start">
       <DropdownMenuGroup>
-        <template v-for="menu in menus" :key="menu.key">
+        <template v-for="menu in menus" :key="menu.value">
           <DropdownMenuItem
             :class="
               menu.value === modelValue
