@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { TooltipContentEmits, TooltipContentProps } from 'reka-ui';
 
+import type { HTMLAttributes } from 'vue';
+
 import { computed } from 'vue';
 
 import { cn } from '@vben-core/shared/utils';
@@ -12,11 +14,11 @@ defineOptions({
 });
 
 const props = withDefaults(
-  defineProps<TooltipContentProps & { class?: any }>(),
+  defineProps<TooltipContentProps & { class?: HTMLAttributes['class'] }>(),
   {
     class: '',
     side: 'right',
-    sideOffset: 5,
+    sideOffset: 6,
   },
 );
 
