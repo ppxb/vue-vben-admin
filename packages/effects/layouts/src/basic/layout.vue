@@ -34,7 +34,9 @@ import {
 } from './menu';
 import { LayoutTabbar } from './tabbar';
 
-defineOptions({ name: 'BasicLayout' });
+defineOptions({
+  name: 'BasicLayout',
+});
 
 const emit = defineEmits<{ clearPreferencesAndLogout: []; clickLogo: [] }>();
 

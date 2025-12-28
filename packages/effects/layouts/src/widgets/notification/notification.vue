@@ -3,7 +3,7 @@ import type { NotificationItem } from './types';
 
 import { useRouter } from 'vue-router';
 
-import { Bell, CircleCheckBig, CircleX, MailCheck } from '@vben/icons';
+import { CircleCheckBig, CircleX, IconifyIcon, MailCheck } from '@vben/icons';
 import { $t } from '@vben/locales';
 
 import {
@@ -86,6 +86,7 @@ function navigateTo(
   }
 }
 </script>
+
 <template>
   <VbenPopover
     v-model:open="open"
@@ -93,12 +94,15 @@ function navigateTo(
   >
     <template #trigger>
       <div class="flex-center mr-2 h-full" @click.stop="toggle()">
-        <VbenIconButton class="bell-button text-foreground relative">
+        <VbenIconButton
+          class="bell-button relative rounded-md"
+          :tooltip="$t('ui.widgets.notifications')"
+        >
           <span
             v-if="dot"
             class="bg-primary absolute right-0.5 top-0.5 h-2 w-2 rounded"
           ></span>
-          <Bell class="size-4" />
+          <IconifyIcon icon="lucide:bell" />
         </VbenIconButton>
       </div>
     </template>
@@ -196,40 +200,3 @@ function navigateTo(
     </div>
   </VbenPopover>
 </template>
-
-<style scoped>
-:deep(.bell-button) {
-  &:hover {
-    svg {
-      animation: bell-ring 1s both;
-    }
-  }
-}
-
-@keyframes bell-ring {
-  0%,
-  100% {
-    transform-origin: top;
-  }
-
-  15% {
-    transform: rotateZ(10deg);
-  }
-
-  30% {
-    transform: rotateZ(-10deg);
-  }
-
-  45% {
-    transform: rotateZ(5deg);
-  }
-
-  60% {
-    transform: rotateZ(-5deg);
-  }
-
-  75% {
-    transform: rotateZ(2deg);
-  }
-}
-</style>
