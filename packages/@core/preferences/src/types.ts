@@ -286,13 +286,13 @@ interface WidgetPreferences {
 interface Preferences {
   /** 全局配置 */
   app: AppPreferences;
-  /** 顶栏配置 */
+  /** 面包屑配置 */
   breadcrumb: BreadcrumbPreferences;
   /** 版权配置 */
   copyright: CopyrightPreferences;
   /** 底栏配置 */
   footer: FooterPreferences;
-  /** 面包屑配置 */
+  /** 头部配置 */
   header: HeaderPreferences;
   /** logo配置 */
   logo: LogoPreferences;
@@ -308,7 +308,7 @@ interface Preferences {
   theme: ThemePreferences;
   /** 动画配置 */
   transition: TransitionPreferences;
-  /** 功能配置 */
+  /** 部件配置 */
   widget: WidgetPreferences;
 }
 
@@ -318,6 +318,7 @@ interface InitialOptions {
   namespace: string;
   overrides?: DeepPartial<Preferences>;
 }
+
 export type {
   AppPreferences,
   BreadcrumbPreferences,
