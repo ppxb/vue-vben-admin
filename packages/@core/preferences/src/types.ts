@@ -45,23 +45,19 @@ interface AppPreferences {
   contentPaddingRight: number;
   /** 内容顶部内边距 */
   contentPaddingTop: number;
-  // /** 应用默认头像 */
+  /** 应用默认头像 */
   defaultAvatar: string;
   /** 默认首页地址 */
   defaultHomePath: string;
-  // /** 开启动态标题 */
+  /** 开启动态标题 */
   dynamicTitle: boolean;
   /** 是否开启检查更新 */
   enableCheckUpdates: boolean;
   /** 是否显示偏好设置 */
   enablePreferences: boolean;
-  /**
-   * @zh_CN 是否开启refreshToken
-   */
+  /** 是否开启 refreshToken */
   enableRefreshToken: boolean;
-  /**
-   * @zh_CN 是否开启首选项导航栏吸顶效果
-   */
+  /** 是否开启首选项导航栏吸顶效果 */
   enableStickyPreferencesNavigationBar: boolean;
   /** 是否移动端 */
   isMobile: boolean;
@@ -75,20 +71,16 @@ interface AppPreferences {
   name: string;
   /** 偏好设置按钮位置 */
   preferencesButtonPosition: PreferencesButtonPositionType;
-  /**
-   * @zh_CN 是否开启水印
-   */
+  /** 是否开启水印 */
   watermark: boolean;
-  /**
-   * @zh_CN 水印文案
-   */
+  /** 水印文案 */
   watermarkContent: string;
   /** z-index */
   zIndex: number;
 }
 
 interface BreadcrumbPreferences {
-  /** 面包屑是否启用 */
+  /** 是否启用面包屑 */
   enable: boolean;
   /** 面包屑是否只有一个时隐藏 */
   hideOnlyOne: boolean;
@@ -96,7 +88,7 @@ interface BreadcrumbPreferences {
   showHome: boolean;
   /** 面包屑图标是否可见 */
   showIcon: boolean;
-  /** 面包屑风格 */
+  /** 面包屑样式 */
   styleType: BreadcrumbStyleType;
 }
 
@@ -131,22 +123,22 @@ interface HeaderPreferences {
   enable: boolean;
   /** 顶栏高度 */
   height: number;
-  /** 顶栏是否隐藏,css-隐藏 */
+  /** 顶栏是否隐藏 */
   hidden: boolean;
   /** 顶栏菜单位置 */
   menuAlign: LayoutHeaderMenuAlignType;
-  /** header显示模式 */
+  /** header 显示模式 */
   mode: LayoutHeaderModeType;
 }
 
 interface LogoPreferences {
-  /** logo是否可见 */
+  /** logo 是否可见 */
   enable: boolean;
-  /** logo图片适应方式 */
+  /** logo 图片适应方式 */
   fit: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-  /** logo地址 */
+  /** logo 地址 */
   source: string;
-  /** 暗色主题logo地址 (可选，若不设置则使用 source) */
+  /** 暗色主题 logo 地址（可选，若不设置则使用 source） */
   sourceDark?: string;
 }
 
@@ -160,13 +152,13 @@ interface NavigationPreferences {
 }
 
 interface SidebarPreferences {
-  /** 点击目录时自动激活子菜单   */
+  /** 点击目录时自动激活子菜单 */
   autoActivateChild: boolean;
   /** 侧边栏是否折叠 */
   collapsed: boolean;
   /** 侧边栏折叠按钮是否可见 */
   collapsedButton: boolean;
-  /** 侧边栏折叠时，是否显示title */
+  /** 侧边栏折叠时，是否显示 title */
   collapsedShowTitle: boolean;
   /** 侧边栏折叠宽度 */
   collapseWidth: number;
@@ -180,7 +172,7 @@ interface SidebarPreferences {
   extraCollapsedWidth: number;
   /** 侧边栏固定按钮是否可见 */
   fixedButton: boolean;
-  /** 侧边栏是否隐藏 - css */
+  /** 侧边栏是否隐藏 */
   hidden: boolean;
   /** 混合侧边栏宽度 */
   mixedWidth: number;
@@ -245,16 +237,16 @@ interface ThemePreferences {
   mode: ThemeModeType;
   /** 圆角 */
   radius: string;
-  /** 是否开启半深色header（只在theme='light'时生效） */
+  /** 是否开启半深色 header（只在 theme='light' 时生效） */
   semiDarkHeader: boolean;
-  /** 是否开启半深色菜单（只在theme='light'时生效） */
+  /** 是否开启半深色菜单（只在 theme='light' 时生效） */
   semiDarkSidebar: boolean;
 }
 
 interface TransitionPreferences {
   /** 页面切换动画是否启用 */
   enable: boolean;
-  // /** 是否开启页面加载loading */
+  // /** 是否开启页面加载 loading */
   loading: boolean;
   /** 页面切换动画 */
   name: PageTransitionType | string;

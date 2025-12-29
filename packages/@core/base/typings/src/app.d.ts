@@ -7,6 +7,12 @@ type LayoutType =
   | 'sidebar-mixed-nav'
   | 'sidebar-nav';
 
+/**
+ * 主题模式
+ * - auto：跟随系统
+ * - dark：暗色
+ * - light：亮色
+ */
 type ThemeModeType = 'auto' | 'dark' | 'light';
 
 /**
