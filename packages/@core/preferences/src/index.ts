@@ -14,6 +14,7 @@ const updatePreferences =
 const resetPreferences =
   preferencesManager.resetPreferences.bind(preferencesManager);
 
+// 清除偏好设置缓存
 const clearPreferencesCache =
   preferencesManager.clearCache.bind(preferencesManager);
 
