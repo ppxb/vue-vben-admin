@@ -211,5 +211,8 @@
   "i18n-ally.sortKeys": true,
   "i18n-ally.namespace": true,
 
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
