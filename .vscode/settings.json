@@ -51,7 +51,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -87,7 +87,6 @@
     "*.json": "jsonc",
     "package.json": "json"
   },
-
   "files.exclude": {
     "**/.eslintcache": true,
     "**/bower_components": true,
