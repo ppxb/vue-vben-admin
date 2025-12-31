@@ -29,14 +29,9 @@ class StorageManager {
    * 清除所有带前缀的存储项
    */
   clear(): void {
-    const keysToRemove: string[] = [];
-    for (let i = 0; i < this.storage.length; i++) {
-      const key = this.storage.key(i);
-      if (key && key.startsWith(this.prefix)) {
-        keysToRemove.push(key);
-      }
-    }
-    keysToRemove.forEach((key) => this.storage.removeItem(key));
+    Object.keys(this.storage)
+      .filter((key) => key.startsWith(this.prefix))
+      .forEach((key) => this.storage.removeItem(key));
   }
 
   /**
