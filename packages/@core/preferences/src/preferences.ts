@@ -43,24 +43,30 @@ class PreferenceManager {
   /**
    * 清除所有缓存的偏好设置
    */
-  clearCache() {
-    Object.keys(STORAGE_KEYS).forEach((key) => this.cache.removeItem(key));
-  }
+  clearCache = () => {
+    Object.values(STORAGE_KEYS).forEach((key) => this.cache.removeItem(key));
+  };
 
-  public getInitialPreferences() {
+  /**
+   * 获取初始化偏好设置
+   */
+  getInitialPreferences = () => {
     return this.initialPreferences;
-  }
+  };
 
-  public getPreferences() {
+  /**
+   * 获取当前偏好设置（只读）
+   */
+  getPreferences = () => {
     return readonly(this.state);
-  }
+  };
 
   /**
    * 初始化偏好设置
-   * @param namespace - 命名空间，用于隔离不同应用配置
+   * @param namespace - 命名空间，用于隔离不同应用的配置
    * @param overrides - 要覆盖的偏好设置
    */
-  public async initPreferences({ namespace, overrides }: InitialOptions) {
+  initPreferences = async ({ namespace, overrides }: InitialOptions) => {
     // 防止重复初始化
     if (this.isInitialized) {
       return;
@@ -90,40 +96,41 @@ class PreferenceManager {
     this.initPlatform();
 
     this.isInitialized = true;
-  }
+  };
 
   /**
    * 重置偏好设置到初始状态
    */
-  resetPreferences() {
+  resetPreferences = () => {
     // 将状态重置为初始偏好设置
     Object.assign(this.state, this.initialPreferences);
 
+    // 保存偏好设置至缓存
     this.saveToCache(this.state);
 
-    // 更新偏好设置
-    this.updatePreferences(this.state);
-  }
+    // 直接触发 UI 更新
+    this.handleUpdates(this.state);
+  };
 
   /**
    * 更新偏好设置
    * @param updates - 要更新的偏好设置
    */
-  public updatePreferences(updates: DeepPartial<Preferences>) {
+  updatePreferences = (updates: DeepPartial<Preferences>) => {
     // 深度合并更新内容和当前状态
     const mergedState = merge({}, updates, markRaw(this.state));
     Object.assign(this.state, mergedState);
 
-    // 根据更新的键值执行相应的操作
+    // 根据更新的值执行更新
     this.handleUpdates(updates);
 
-    // 防抖保存到缓存
+    // 保存到缓存
     this.debouncedSave(this.state);
-  }
+  };
 
   /**
-   * 处理更新的键值
-   * @param updates - 部分更新的偏好设置
+   * 处理更新
+   * @param updates - 更新的偏好设置
    */
   private handleUpdates(updates: DeepPartial<Preferences>) {
     const { theme, app } = updates;
