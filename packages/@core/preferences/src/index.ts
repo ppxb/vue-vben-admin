@@ -6,7 +6,7 @@ export const {
   getPreferences,
   updatePreferences,
   resetPreferences,
-  clearCache: clearPreferencesCache,
+  clearCache,
   initPreferences,
 } = preferencesManager;
 
